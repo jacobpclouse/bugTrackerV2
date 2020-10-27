@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="A new bug tracker by Jacob P Clouse">
+    <meta name="keywords" content="bug tracker">
+    <meta name="author" content="Jacob P Clouse">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/26c2ec2f36.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JPC Bug Tracker | Assigned to Me</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight"> JPC </span> Bug Tracker</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Main Portfolio</a></li>
+                    <li><a href="https://github.com/jacobpclouse">Github</a></li>
+                    <li><a href="index.html">Linkedin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <div class="main-container">
+        <div class="container-left">
+          
+          <p class="container-left-item" id="selected-page">Assigned to me</p>
+          <p class="container-left-item"><a href="./unhandled.html">Unhandled</a></p>
+          <p class="container-left-item"><a href="./all_open.html">All Open</a></p>
+          <p class="container-left-item"><a href="./resolved.html">Resolved</a></p>
+          <p class="container-left-item"><a href="./dashboard.html">Dashboard</a></p>
+          <p class="container-left-item"><a href="./report_an_issue.html">Report an Issue</a></p>
+
+        </div>
+
+        <div class="container-right">
+            <h1><i class="fas fa-clipboard-list"></i> Assigned To Me</h1>
+
+            <input type="text" id="search-input" onkeyup="tableSearchFunction()" placeholder="Search for Request Type" title="Type in an Issue Summary">
+
+            <div class="scroll-div"><table id="issue-table">
+                <tr>
+                  <th>Summary:</th>
+                  <th>Key:</th>
+                  <th>Customer Request Type:</th>
+                  <th>Reporter:</th>
+                  <th>Location:</th>
+                </tr>
+                <tr>
+                  <td>Need Adobe Acrobat</td>
+                  <td>ITSD-0001</td>
+                  <td>Request Software</td>
+                  <td>Maria Anders</td>
+                  <td>Russia</td>
+                </tr>
+                <tr>
+                  <td>My Printer is not connecting</td>
+                  <td>ITSD-0002</td>
+                  <td>Printer/Scanner Support</td>
+                  <td>Christina Berglund</td>
+                  <td>Sweden</td>
+                </tr>
+                <tr>
+                  <td>Camera Isn't turning on</td>
+                  <td>ITSD-0003</td>
+                  <td>Hardware Support</td>
+                  <td>Francisco Chang</td>
+                  <td>Mexico</td>
+                </tr>
+                <tr>
+                  <td>Locked out of my account</td>
+                  <td>ITSD-0004</td>
+                  <td>Account Support</td>
+                  <td>Roland Mendel</td>
+                  <td>Austria</td>
+                </tr>
+                <tr>
+                  <td>Where are the Nvivo Licenses?</td>
+                  <td>ITSD-0005</td>
+                  <td>Request Software</td>
+                  <td>Helen Bennett</td>
+                  <td>UK</td>
+                </tr>
+                <tr>
+                  <td>Moodle is down</td>
+                  <td>ITSD-0006</td>
+                  <td>Outage</td>
+                  <td>Philip Cramer</td>
+                  <td>Germany</td>
+                </tr>
+                <tr>
+                  <td>New employee computer setup</td>
+                  <td>ITSD-0007</td>
+                  <td>Hardware Support</td>
+                  <td>Yoshi Tannamuri</td>
+                  <td>Canada</td>
+                </tr>
+                <tr>
+                  <td>Forgot My Password!</td>
+                  <td>ITSD-0008</td>
+                  <td>Account Support</td>
+                  <td>Giovanni Rovelli</td>
+                  <td>Italy</td>
+                </tr>
+                <tr>
+                  <td>Power Brick wire frayed - Sparking when I move it on carpet!</td>
+                  <td>ITSD-0009</td>
+                  <td>Hardware Support</td>
+                  <td>Simon Crowther</td>
+                  <td>UK</td>
+                </tr>
+                <tr>
+                  <td>Can I get Adobe CC installed on my desktop?</td>
+                  <td>ITSD-0010</td>
+                  <td>Request Software</td>
+                  <td>Marie Bertrand</td>
+                  <td>France</td>
+                </tr>
+                
+                <tr>
+                  <td>Need Adobe Acrobat</td>
+                  <td>ITSD-0011</td>
+                  <td>Request Software</td>
+                  <td>Maria Anders</td>
+                  <td>Russia</td>
+                </tr>
+                <tr>
+                  <td>My Printer is not connecting</td>
+                  <td>ITSD-0012</td>
+                  <td>Printer/Scanner Support</td>
+                  <td>Christina Berglund</td>
+                  <td>Sweden</td>
+                </tr>
+                <tr>
+                  <td>Camera Isn't turning on</td>
+                  <td>ITSD-0013</td>
+                  <td>Hardware Support</td>
+                  <td>Francisco Chang</td>
+                  <td>Mexico</td>
+                </tr>
+                <tr>
+                  <td>Account Support</td>
+                  <td>ITSD-0014</td>
+                  <td>Locked out of my account</td>
+                  <td>Roland Mendel</td>
+                  <td>Austria</td>
+                </tr>
+                <tr>
+                  <td>Where are the Nvivo Licenses?</td>
+                  <td>ITSD-0015</td>
+                  <td>Request Software</td>
+                  <td>Helen Bennett</td>
+                  <td>UK</td>
+                </tr>
+                <tr>
+                  <td>Moodle is down</td>
+                  <td>ITSD-0016</td>
+                  <td>Outage</td>
+                  <td>Philip Cramer</td>
+                  <td>Germany</td>
+                </tr>
+                <tr>
+                  <td>New employee computer setup</td>
+                  <td>ITSD-0017</td>
+                  <td>Hardware Support</td>
+                  <td>Yoshi Tannamuri</td>
+                  <td>Canada</td>
+                </tr>
+                <tr>
+                  <td>Forgot My Password!</td>
+                  <td>ITSD-0018</td>
+                  <td>Account Support</td>
+                  <td>Giovanni Rovelli</td>
+                  <td>Italy</td>
+                </tr>
+                <tr>
+                  <td>Power Brick wire frayed - Sparking when I move it on carpet!</td>
+                  <td>ITSD-0019</td>
+                  <td>Hardware Support</td>
+                  <td>Simon Crowther</td>
+                  <td>UK</td>
+                </tr>
+                <tr>
+                  <td>Can I get Adobe CC installed on my desktop?</td>
+                  <td>ITSD-0020</td>
+                  <td>Request Software</td>
+                  <td>Marie Bertrand</td>
+                  <td>France</td>
+                </tr>
+                
+              </table></div>
+        </div>
+
+      </div>
+       
+        
+    </section>
+
+    
+
+    <footer>
+        <p><strong>Jacob P Clouse</strong>, &copy; 2020</p>
+    </footer>
+    </div>
+    
+    <script src="/js/index.js"></script>
+
+
+</body>
+</html>

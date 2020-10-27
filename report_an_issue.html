@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="A new bug tracker by Jacob P Clouse">
+  <meta name="keywords" content="bug tracker">
+  <meta name="author" content="Jacob P Clouse">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/26c2ec2f36.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/report-issue-form.css">
+  <title>JPC Bug Tracker | Report an Issue</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><span class="highlight"> JPC </span> Bug Tracker</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Main Portfolio</a></li>
+          <li><a href="https://github.com/jacobpclouse">Github</a></li>
+          <li><a href="index.html">Linkedin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="main-container">
+    <div class="container-left">
+
+      <p class="container-left-item"><a href="./assigned_to_me.html">Assigned to Me</a></p>
+      <p class="container-left-item"><a href="./unhandled.html">Unhandled</a></p>
+      <p class="container-left-item"><a href="./all_open.html">All Open</a></p>
+      <p class="container-left-item"><a href="./resolved.html">Resolved</a></p>
+      <p class="container-left-item"><a href="./dashboard.html">Dashboard</a></p>
+      <p class="container-left-item" id="selected-page">Report an Issue</a></p>
+
+    </div>
+
+    <div class="container-right">
+      <h1><i class="fas fa-bug"></i> Report an Issue</h1>
+
+      <form id="report-form">
+        <div class="form-group">
+          <label for="Issue">Issue Title: </label>
+          <input type="text" id="Issue" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="Name">Name: </label>
+          <input type="text" id="Name" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="RequestType">Request Type: </label>
+          <input type="text" id="RequestType" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="Location">Location: </label>
+          <input type="text" id="Location" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="Phone">Phone: </label>
+          <input type="text" id="Phone" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="Description">Description</label>
+          <input type="text" id="Description" class="form-control">
+        </div>
+        <input type="submit" value="Submit Issue" class="btn">
+      </form>
+
+
+
+
+    </div>
+
+  </div>
+
+
+  </section>
+
+
+
+  <footer>
+    <p><strong>Jacob P Clouse</strong>, &copy; 2020</p>
+  </footer>
+  </div>
+
+  
+  <script src="/js/reportAnIssue.js"></script>
+
+
+</body>
+
+</html>
