@@ -1,0 +1,1 @@
+This is a helpdesk bug tracker built with react, modeled off the old HTML version (link here: https://github.com/jacobpclouse/BugTracker-V1)
