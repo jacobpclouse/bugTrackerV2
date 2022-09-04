@@ -18,11 +18,13 @@ db = SQLAlchemy(app)
 class Issues(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     issueReporter = db.Column(db.String(200), nullable=False)
+    reporterPhone = db.Column(db.Float(11))
     issueDate = db.Column(db.DateTime, default=datetime.utcnow)
     issueTitle = db.Column(db.String(200), nullable=False)
     issueDescription = db.Column(db.String(2000), nullable=False)
     issueLocation = db.Column(db.String(200), nullable=False)
     issueType = db.Column(db.String(200), nullable=False)
+    
     issueAssigned = db.Column(db.Boolean, default=False)
     issueResolved = db.Column(db.Boolean, default=False)
 
