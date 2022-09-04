@@ -19,3 +19,4 @@ This is a helpdesk bug tracker built with flask, modeled off the old HTML versio
 - CSS Not being picked up: https://stackoverflow.com/questions/22259847/application-not-picking-up-css-file-flask-python
 - Setup Static Folder in CSS: https://youtu.be/tXpFERibRaU?t=325
 - SQLAlchemy Databases in Flask: https://www.youtube.com/watch?v=hbDRTZarMUw
+- How to Scrape Reddit's FREE API for Subreddit Stats & Data: https://www.youtube.com/watch?v=1KJ_I5h8FRo

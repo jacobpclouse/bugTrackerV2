@@ -1,14 +1,34 @@
+from email.policy import default
+import sqlite3
 from markupsafe import escape
 from flask import Flask, render_template, abort, request
 from datetime import datetime
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+# Database setup 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///issues.db'
 
+# Init the Database
+db = SQLAlchemy(app)
+
+# Create Database model
+class Issues(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    issueReporter = db.Column(db.String(200), nullable=False)
+    issueDate = db.Column(db.DateTime, default=datetime.utcnow)
+    issueTitle = db.Column(db.String(200), nullable=False)
+    issueDescription = db.Column(db.String(2000), nullable=False)
+    issueLocation = db.Column(db.String(200), nullable=False)
+    issueType = db.Column(db.String(200), nullable=False)
+
+    # function to return string when added to db
+    def __repr__(self):
+        return "<issueReporter %r" % self.id
 
 
 ## Routes to all pages
-
 # 404 page
 @app.route('/404')
 def pageNotFound():
