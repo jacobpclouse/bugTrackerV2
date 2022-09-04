@@ -1,18 +1,28 @@
 from markupsafe import escape
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, request
+from datetime import datetime
 
 app = Flask(__name__)
 
 
 
+
+## Routes to all pages
+
+# 404 page
+@app.route('/404')
+def pageNotFound():
+    return render_template('404.html')
+
+
 # all open issues
-@app.route('/all-open')
+@app.route('/all')
 def allOpenIssues():
     return render_template('all_open.html')
 
 
 # issues assigned to me
-@app.route('/assigned-to-me')
+@app.route('/assigned')
 def assignedToMe():
     return render_template('assigned_to_me.html')
 
