@@ -39,13 +39,20 @@
     
     <div class="main-container">
         <div class="container-left">
-          
+
           <p class="container-left-item" id="selected-page">Assigned to me</p>
+          <p class="container-left-item"><a href="{{url_for('unhandledIssues')}}">Unhandled</a></p>
+          <p class="container-left-item"><a href="{{url_for('allOpenIssues')}}">All Open</a></p>
+          <p class="container-left-item"><a href="{{url_for('resolvedIssues')}}">Resolved</a></p>
+          <p class="container-left-item"><a href="{{url_for('dashboard')}}">Dashboard</a></p>
+          <p class="container-left-item"><a href="{{url_for('reportAnIssue')}}">Report an Issue</a></p>          
+
+          <!-- <p class="container-left-item" id="selected-page">Assigned to me</p>
           <p class="container-left-item"><a href="./unhandled.html">Unhandled</a></p>
           <p class="container-left-item"><a href="./all_open.html">All Open</a></p>
           <p class="container-left-item"><a href="./resolved.html">Resolved</a></p>
           <p class="container-left-item"><a href="./dashboard.html">Dashboard</a></p>
-          <p class="container-left-item"><a href="./report_an_issue.html">Report an Issue</a></p>
+          <p class="container-left-item"><a href="./report_an_issue.html">Report an Issue</a></p> -->
 
         </div>
 
