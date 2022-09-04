@@ -12,8 +12,10 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/26c2ec2f36.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
 
-    <link rel="stylesheet" href="./css/style.css">
     <title>JPC Bug Tracker | Resolved</title>
 </head>
 <body>
@@ -209,11 +211,12 @@
     
 
     <footer>
-        <p><strong>Jacob P Clouse</strong>, &copy; 2020</p>
+        <p><strong>Jacob P Clouse</strong>, &copy; 2022</p>
     </footer>
     </div>
     
-    <script src="/js/index.js"></script>
+    <!-- Javascript -->
+    <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
 
 
 </body>

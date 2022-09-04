@@ -15,8 +15,12 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/style.css">
-  <title>JPC Bug Tracker | All Open</title>
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/dashboard-selections.css') }}">
+
+
+  <title>JPC Bug Tracker | Dashboard</title>
 </head>
 
 <body>
@@ -42,47 +46,49 @@
 
       <p class="container-left-item"><a href="./assigned_to_me.html">Assigned to Me</a></p>
       <p class="container-left-item"><a href="./unhandled.html">Unhandled</a></p>
-      <p class="container-left-item" id="selected-page">All Open</p>
+      <p class="container-left-item"><a href="./all_open.html">All Open</a></p>
       <p class="container-left-item"><a href="./resolved.html">Resolved</a></p>
-      <p class="container-left-item"><a href="./dashboard.html">Dashboard</a></p>
+      <p class="container-left-item" id="selected-page">Dashboard</p>
       <p class="container-left-item"><a href="./report_an_issue.html">Report an Issue</a></p>
 
     </div>
 
     <div class="container-right">
-      <h1><i class="fas fa-folder-open"></i> All Open</h1>
+      <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
 
+      <div class="dashboard-selections">
+        <div class="dash-left">
+          <h1>Recent Changes</h1>
+          <p>Newest Issue: </p>
+          <p>Longest Ongoing Issue: </p>
+        </div>
 
-      <table class="table-all-open">
-        <thead>
-          <tr>
-            <th>Issue Title:</th>
-            <th>Key #:</th>
-            <th>Date Created:</th>
-            <th>Assigned To:</th>
-          </tr>
-        </thead>
-        <tbody id="open-issue-list"></tbody>
-      </table>
-
+        <div class="dash-right">
+          <h1>Events</h1>
+          <p>Upcoming: </p>
+          <p>Recently Past: </p>
+        </div>
+      </div>
 
 
 
 
     </div>
+
   </div>
+
+
   </section>
 
 
 
   <footer>
-    <p><strong>Jacob P Clouse</strong>, &copy; 2020</p>
+    <p><strong>Jacob P Clouse</strong>, &copy; 2022</p>
   </footer>
   </div>
 
-  <script src="/js/index.js"></script>
-  <script src="/js/reportAnIssue.js"></script>
-  
+  <!-- Javascript -->
+  <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
 
 
 </body>
