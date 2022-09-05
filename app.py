@@ -157,9 +157,14 @@ def unhandledIssues():
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # # SELECTED SPECIFIC ISSUE /issue/<int:user_id>
-@app.route('/issue')
-def specificIssue():
+@app.route('/issue/<int:issue_id>', methods=['POST', 'GET'])
+def specificIssue(issue_id):
     title = "JPC Bug Tracker | Issue No: "
-
+## TRY having it so that you click a link that uses id in the url, then that id pulls the data from the db and displays it
+    try:
+        issueNumber = Issues.query.filter_by(id=issue_id)
+        return render_template('selected_issue.html', current_Issue = issueNumber )
+    except IndexError:
+        abort(404)
     
-    return render_template('selected_issue.html')
+        

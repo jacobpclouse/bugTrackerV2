@@ -26,3 +26,6 @@ This is a helpdesk bug tracker built with flask, modeled off the old HTML versio
 - Add favicon to a page: https://www.w3schools.com/html/html_favicon.asp
 - Hex Color Converter: https://www.w3schools.com/colors/colors_hexadecimal.asp
 - SVG Maker: https://picsvg.com/
+- Nth Child CSS: https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
+- Flask SQL Examples: https://www.fullstackpython.com/flask-sqlalchemy-model-examples.html
+- **** How To Use an SQLite Database in a Flask Application: https://www.digitalocean.com/community/tutorials/how-to-use-an-sqlite-database-in-a-flask-application
