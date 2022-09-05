@@ -67,37 +67,45 @@
         title="Type in an Issue Summary">
 
       <div class="scroll-div">
-        <table id="issue-table">
 
+        <table id="issue-table">
+        <th>Summary:</th>
+        <th>Key:</th>
+        <th>Customer Request Type:</th>
+        <th>Reporter:</th>
+        <th>Location:</th>
+
+
+        </tr>
           {% for issue in Unhandled_issues %}
             <tr>
               <td>
-                {{ Unhandled_issues.issueTitle }}
+                {{ issue.issueTitle }}
               </td> <!-- Title -->
 
 
               <td>
-                {{ Unhandled_issues.id }}
+                {{ issue.id }}
               </td> <!-- Primary Key / ID -->
 
 
               <td>
-                {{ Unhandled_issues.issueType }}
+                {{ issue.issueType }}
               </td> <!-- Overall Type -->
 
 
               <td>
-                {{ Unhandled_issues.issueReporter }}
+                {{ issue.issueReporter }}
               </td> <!-- Reporter Name -->
 
 
               <td>
-                {{ Unhandled_issues.issueLocation }}
+                {{ issue.issueLocation }}
               </td> <!-- Location -->
             </tr>
 
           {% endfor %}
-
+          </tr>
           <!-- OLD TABLE -->
           <!-- <tr>
             <th>Summary:</th>
@@ -106,13 +114,7 @@
             <th>Reporter:</th>
             <th>Location:</th>
           </tr>
-          <tr>
-            <td>Need Adobe Acrobat</td>
-            <td>ITSD-0001</td>
-            <td>Request Software</td>
-            <td>Maria Anders</td>
-            <td>Russia</td>
-          </tr>
+
           <tr>
             <td>My Printer is not connecting</td>
             <td>ITSD-0002</td>

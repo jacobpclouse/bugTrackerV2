@@ -16,17 +16,21 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///issues.db'
 # Init the Database
 db = SQLAlchemy(app)
 
-# Create Database model
+# Create Database model -- Will make fields required later
 class Issues(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    issueReporter = db.Column(db.String(200), nullable=False)
-    reporterPhone = db.Column(db.Float(11))
+    issueReporter = db.Column(db.String(200))
+    #issueReporter = db.Column(db.String(200), nullable=False)
+    reporterPhone = db.Column(db.Float(10))
     issueDate = db.Column(db.DateTime, default=datetime.utcnow)
-    issueTitle = db.Column(db.String(200), nullable=False)
-    issueDescription = db.Column(db.String(2000), nullable=False)
-    issueLocation = db.Column(db.String(200), nullable=False)
-    issueType = db.Column(db.String(200), nullable=False)
-    
+    issueTitle = db.Column(db.String(200))
+    #issueTitle = db.Column(db.String(200), nullable=False)
+    issueDescription = db.Column(db.String(1000))
+    #issueDescription = db.Column(db.String(1000), nullable=False)
+    issueLocation = db.Column(db.String(200))
+    #issueLocation = db.Column(db.String(200), nullable=False)
+    issueType = db.Column(db.String(200))
+    #issueType = db.Column(db.String(200), nullable=False
     issueAssigned = db.Column(db.Boolean, default=False)
     issueResolved = db.Column(db.Boolean, default=False)
 
@@ -82,28 +86,34 @@ def reportAnIssue():
     if request.method == "POST":
 
         # 1st Step -- Adding to DB
+        # need to have them all part of an object then add the object
         issue_Reporter = request.form["html_reporter"]
-        add_reporter = Issues(issueReporter=issue_Reporter)
+        ##add_reporter = Issues(issueReporter=issue_Reporter)
 
         reporter_Phone = request.form["html_phone"]
-        add_phone = Issues(reporterPhone=reporter_Phone)
+        ##add_phone = Issues(reporterPhone=reporter_Phone)
 
         issue_Title = request.form["html_title"]
-        add_title = Issues(issueTitle=issue_Title)
+        ##add_title = Issues(issueTitle=issue_Title)
 
         issue_Description = request.form["html_description"]
-        add_description = Issues(issueDescription=issue_Description)
+        ##add_description = Issues(issueDescription=issue_Description)
 
         issue_Location = request.form["html_location"]
-        add_location = Issues(issueLocation=issue_Location)
+        ##add_location = Issues(issueLocation=issue_Location)
 
         issue_Type = request.form["html_archetype"]
-        add_type = Issues(issueType=issue_Type)
+        ##add_type = Issues(issueType=issue_Type)
+
+
+        addAllVal = Issues(issueReporter=issue_Reporter,reporterPhone=reporter_Phone,issueTitle=issue_Title,issueDescription=issue_Description,issueLocation=issue_Location,issueType=issue_Type)
 
 
         # 2nd Step -- Committing to DB
         try:
-            db.session.add(add_reporter,add_phone,add_title,add_description,add_location,add_type)
+            #db.session.add(add_reporter,add_phone,add_title,add_description,add_location,add_type)
+            ##db.session.add(add_reporter)
+            db.session.add(addAllVal)
             db.session.commit()
             return redirect('/unhandled')
 
