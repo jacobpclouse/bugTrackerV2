@@ -23,3 +23,6 @@ This is a helpdesk bug tracker built with flask, modeled off the old HTML versio
 - tkinter Error: https://stackoverflow.com/questions/25905540/importerror-no-module-named-tkinter
 - flask template inheritance: https://flask.palletsprojects.com/en/1.1.x/patterns/templateinheritance/
 - SQLAlchemy docs Declaring Models: https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
+- Add favicon to a page: https://www.w3schools.com/html/html_favicon.asp
+- Hex Color Converter: https://www.w3schools.com/colors/colors_hexadecimal.asp
+- SVG Maker: https://picsvg.com/

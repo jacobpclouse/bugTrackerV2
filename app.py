@@ -105,7 +105,7 @@ def reportAnIssue():
         issue_Type = request.form["html_archetype"]
         ##add_type = Issues(issueType=issue_Type)
 
-
+        # Putting all values into one object and then adding/commiting that to the DB
         addAllVal = Issues(issueReporter=issue_Reporter,reporterPhone=reporter_Phone,issueTitle=issue_Title,issueDescription=issue_Description,issueLocation=issue_Location,issueType=issue_Type)
 
 
