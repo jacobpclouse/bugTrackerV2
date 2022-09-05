@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="A new bug tracker by Jacob P Clouse">
+  <meta name="keywords" content="bug tracker">
+  <meta name="author" content="Jacob P Clouse">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/26c2ec2f36.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/sign-in.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/dashboard-selections.css') }}">
+
+  <!-- Title of the Page -->
+  <title>JPC Bug Tracker | Sign In</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><span class="highlight"> JPC </span> Bug Tracker</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="https://jacobpclouse.me/" target="_blank">Main Portfolio</a></li>
+          <li><a href="https://github.com/jacobpclouse" target="_blank">Github</a></li>
+          <li><a href="https://www.linkedin.com/in/jpclouse/" target="_blank">Linkedin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="main-container">
+    <div class="container-left right-border">
+
+    </div>
+
+    <div class="container-right">
+      <h1><i class="fas fa-door-open"></i> Sign In Or Sign Up</h1>
+
+      <div class="dashboard-selections">
+        <div class="dash-left">
+          <h1>Sign In</h1>
+          <p>Newest Issue: </p>
+          <p>Longest Ongoing Issue: </p>
+        </div>
+
+        <div class="dash-right">
+          <h1>Sign Up</h1>
+          <p>Upcoming: </p>
+          <p>Recently Past: </p>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+    <div class="container-left left-border">
+
+    </div>
+
+  </div>
+
+
+  </section>
+
+
+
+  <footer>
+    <p><strong>Jacob P Clouse</strong>, &copy; 2022</p>
+  </footer>
+  </div>
+
+  <!-- Javascript -->
+  <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
+
+
+</body>
+
+</html>

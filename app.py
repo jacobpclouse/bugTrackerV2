@@ -77,6 +77,13 @@ def resolvedIssues():
     return render_template('resolved.html')
 
 
+# sign in / sign up
+@app.route('/login')
+def loginPage():
+    title = "JPC Bug Tracker | Login"
+    return render_template('sign_in.html')
+
+
 # any unhandled issues
 @app.route('/unhandled')
 def unhandledIssues():
