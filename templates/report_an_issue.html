@@ -63,35 +63,36 @@
     <div class="container-right">
       <h1><i class="fas fa-bug"></i> Report an Issue</h1>
 
-      <form id="report-form" action="/issues" method="POST">
+      <!-- Orig action was "/issues" -->
+      <form id="report-form" action="/report" method="POST">
         <div class="form-group">
           <label for="Issue">Issue Title: </label>
-          <input type="text" id="Issue" class="form-control" placeholder="Give us a clear title of your issue">
+          <input type="text" id="Issue" class="form-control" placeholder="Give us a clear title of your issue" name="html_title">
         </div>
 
         <div class="form-group">
           <label for="Name">Name: </label>
-          <input type="text" id="Name" class="form-control" placeholder="Give us your full name">
+          <input type="text" id="Name" class="form-control" placeholder="Give us your full name" name="html_reporter">
         </div>
 
         <div class="form-group">
           <label for="RequestType">Request Type: </label>
-          <input type="text" id="RequestType" class="form-control" placeholder="Is this a Software Issue, Hardware Issue, or something else?">
+          <input type="text" id="RequestType" class="form-control" placeholder="Is this a Software Issue, Hardware Issue, or something else?" name="html_archetype">
         </div>
 
         <div class="form-group">
           <label for="Location">Location: </label>
-          <input type="text" id="Location" class="form-control" placeholder="What office are you in?">
+          <input type="text" id="Location" class="form-control" placeholder="What office are you in?" name="html_location">
         </div>
 
         <div class="form-group">
           <label for="Phone">Phone: </label>
-          <input type="text" id="Phone" class="form-control" placeholder="Give us your 11 digit phone number (no dashes)">
+          <input type="tel" id="Phone" class="form-control" placeholder="Give us your 11 digit phone number (no dashes)" name="html_phone">
         </div>
 
         <div class="form-group">
           <label for="Description">Description</label>
-          <input type="text" id="Description" class="form-control" placeholder="Give us a full description of your issue">
+          <input type="text" id="Description" class="form-control" placeholder="Give us a full description of your issue" name="html_description">
         </div>
         <input type="submit" value="Submit Issue" class="btn">
 

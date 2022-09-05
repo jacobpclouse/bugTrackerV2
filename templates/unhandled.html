@@ -69,9 +69,37 @@
       <div class="scroll-div">
         <table id="issue-table">
 
+          {% for issue in Unhandled_issues %}
+            <tr>
+              <td>
+                {{ Unhandled_issues.issueTitle }}
+              </td> <!-- Title -->
+
+
+              <td>
+                {{ Unhandled_issues.id }}
+              </td> <!-- Primary Key / ID -->
+
+
+              <td>
+                {{ Unhandled_issues.issueType }}
+              </td> <!-- Overall Type -->
+
+
+              <td>
+                {{ Unhandled_issues.issueReporter }}
+              </td> <!-- Reporter Name -->
+
+
+              <td>
+                {{ Unhandled_issues.issueLocation }}
+              </td> <!-- Location -->
+            </tr>
+
+          {% endfor %}
 
           <!-- OLD TABLE -->
-          <tr>
+          <!-- <tr>
             <th>Summary:</th>
             <th>Key:</th>
             <th>Customer Request Type:</th>
@@ -218,7 +246,7 @@
             <td>Request Software</td>
             <td>Marie Bertrand</td>
             <td>France</td>
-          </tr>
+          </tr> -->
 
         </table>
       </div>
