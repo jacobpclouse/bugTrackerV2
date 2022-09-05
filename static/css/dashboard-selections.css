@@ -32,3 +32,60 @@
     font-size: 1.5rem;
 }
 
+
+
+/* Individual issues sytles */
+
+.issue-left,
+.issue-right {
+    width: 95%;
+    background-color: var(--clr-background);
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 8px;
+    border: var(--clr-accent) 3px solid;
+    color: var(--clr-dark);
+    min-height: 20vh;
+}
+
+.issue-right:nth-child(even){
+    border: var(--clr-light) 3px solid;
+}
+
+.issue-right:nth-child(odd){
+    border: var(--clr-drk-v2) 3px solid;
+}
+
+
+.issue-left h1,
+.issue-right h1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.issue-left div {
+    width: 99%;
+    background-color: var(--clr-border);
+    padding: 5px;
+    /* border: var(--clr-drk-v2) 3px solid; */
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+}
+
+.specialBtn {
+    width: 99%;
+    height: 40px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border: none;
+    background-color: var(--clr-light-transparent);
+    color: var(--clr-dark);
+    font-size: 1rem;
+}
+
+.specialBtn:hover{
+    background-color: var(--clr-accent);
+    font-weight: bold;
+
+}

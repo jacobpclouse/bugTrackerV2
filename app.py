@@ -156,7 +156,10 @@ def unhandledIssues():
 
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-# # any unhandled issues -- orig
-# @app.route('/unhandled')
-# def unhandledIssues():
-#     return render_template('unhandled.html')
+# # SELECTED SPECIFIC ISSUE /issue/<int:user_id>
+@app.route('/issue')
+def specificIssue():
+    title = "JPC Bug Tracker | Issue No: "
+
+    
+    return render_template('selected_issue.html')

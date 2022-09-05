@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="A new bug tracker by Jacob P Clouse">
+  <meta name="keywords" content="bug tracker">
+  <meta name="author" content="Jacob P Clouse">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/26c2ec2f36.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/dashboard-selections.css') }}">
+
+  <!-- Title of the Page -->
+  <title>JPC Bug Tracker | Issue</title> 
+  <!-- ^^ have it so that the title of the issue comes through -->
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/images/favicon3.svg') }}">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><span class="highlight"> JPC </span> Bug Tracker</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="https://jacobpclouse.me/" target="_blank">Main Portfolio</a></li>
+          <li><a href="https://github.com/jacobpclouse" target="_blank">Github</a></li>
+          <li><a href="https://www.linkedin.com/in/jpclouse/" target="_blank">Linkedin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="main-container">
+    <div class="container-left">
+
+      <p class="container-left-item"><a href="{{url_for('assignedToMe')}}">Assigned to Me</a></p>
+      <p class="container-left-item"><a href="{{url_for('unhandledIssues')}}">Unhandled</a></p>
+      <p class="container-left-item"><a href="{{url_for('allOpenIssues')}}">All Open</a></p>
+      <p class="container-left-item"><a href="{{url_for('resolvedIssues')}}">Resolved</a></p>
+      <p class="container-left-item" id="selected-page">Dashboard</p>
+      <p class="container-left-item"><a href="{{url_for('reportAnIssue')}}">Report an Issue</a></p>
+
+      <!-- <p class="container-left-item"><a href="./assigned_to_me.html">Assigned to Me</a></p>
+      <p class="container-left-item"><a href="./unhandled.html">Unhandled</a></p>
+      <p class="container-left-item"><a href="./all_open.html">All Open</a></p>
+      <p class="container-left-item"><a href="./resolved.html">Resolved</a></p>
+      <p class="container-left-item" id="selected-page">Dashboard</p>
+      <p class="container-left-item"><a href="./report_an_issue.html">Report an Issue</a></p> -->
+
+    </div>
+
+    <div class="container-right">
+      <!-- Issue #(put id number) : (Title of the Issue) -->
+      <h1><i class="fas fa-wrench"></i> Issue</h1>
+
+      <div class="dashboard-selections">
+
+        <!--  Below use the issue specific styles to adjust -->
+        <div class="issue-left">
+          <!-- <h2>Title: </h2> -->
+          <div>
+            <p>Reported By:  </p>
+            <p>Date Reported: </p>
+            <p>Description:  </p>
+            
+          </div>
+        </div>
+
+        <div class="issue-right">
+          
+          <h4>Comments: </h4>
+          <p>Lorem, ipsum dolor. Lorem ipsum dolor sit amet. </p>
+        </div>
+
+        <div class="issue-right">
+          
+          <h4>Add Commend</h4>
+          <p>PUT FORM INPUT HERE</p>
+          <input type="submit" value="Submit Comment" class="specialBtn">
+          
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+
+
+  </section>
+
+
+
+  <footer>
+    <p><strong>Jacob P Clouse</strong>, &copy; 2022</p>
+  </footer>
+  </div>
+
+  <!-- Javascript -->
+  <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
+
+
+</body>
+
+</html>
