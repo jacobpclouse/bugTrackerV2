@@ -69,20 +69,21 @@
       <h1><i class="fas fa-wrench"></i> Issue : </h1>
 
       <div class="dashboard-selections">
-        {% block current_Issue %}
         <!--  Below use the issue specific styles to adjust -->
         <div class="issue-left">
           <!-- <h2>Title: </h2> -->
           <div>
-            <p>Reported By:  </p>
-            <p>{{ current_Issue.issueReporter }}</p>
-            <p>Date Reported:</p>
-            <p>Description: </p>
+            {% for issue in current_Issue %}
+            <p>Reported By:  {{issue.id}}</p>
+            <!-- <p>{% block current_Issue  %} {{ current_Issue }} {% endblock %}</p> -->
+            <!-- <p>{{ current_Issue.issueReporter }}</p> -->
+            <p>Date Reported: {{issue.issueDate}}</p>
+            <p>Description: {{issue.issueDescription}}</p>
             <input type="submit" value="Assign To Me" class="specialBtn">
+            {% endfor %}
           </div>
         </div>
 
-        {% endblock %}
         <div class="issue-right">
           
           <h4>Comments: </h4>

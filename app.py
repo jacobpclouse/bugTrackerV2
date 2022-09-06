@@ -3,7 +3,7 @@ from email.policy import default
 import sqlite3
 from turtle import title
 from markupsafe import escape
-from flask import Flask, render_template, abort, request, redirect
+from flask import Flask, render_template, abort, request, redirect, session
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 
@@ -159,8 +159,10 @@ def unhandledIssues():
 # # SELECTED SPECIFIC ISSUE /issue/<int:user_id>
 @app.route('/issue/<int:issue_id>', methods=['POST', 'GET'])
 def specificIssue(issue_id):
-    title = "JPC Bug Tracker | Issue No: "
+    title = f"JPC Bug Tracker | Issue No: {issue_id}"
     issueNumber = Issues.query.filter_by(id=issue_id)
+    # issueNumber = Issues.query.filter_by(id=issue_id).all()
+    # issueNumber = Issues.query.filter_by(id=issue_id)
     return render_template('selected_issue.html', title = title, current_Issue = issueNumber )
 ## TRY having it so that you click a link that uses id in the url, then that id pulls the data from the db and displays it
     # try:
