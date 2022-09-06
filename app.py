@@ -54,7 +54,10 @@ def pageNotFound():
 @app.route('/all', methods=['POST', 'GET'])
 def allOpenIssues():
     title = "JPC Bug Tracker | All Open"
-    return render_template('all_open.html', title = title)
+
+    # sql to get all issues, no matter what
+    allIssuesForm = Issues.query.order_by(Issues.issueDate.desc()).all()
+    return render_template('all_open.html', title = title, all_Issues = allIssuesForm)
 
 
 
@@ -107,9 +110,7 @@ def reportAnIssue():
 
         # Putting all values into one object and then adding/commiting that to the DB
         addAllVal = Issues(issueReporter=issue_Reporter,reporterPhone=reporter_Phone,issueTitle=issue_Title,issueDescription=issue_Description,issueLocation=issue_Location,issueType=issue_Type)
-
-
-        # 2nd Step -- Committing to DB
+## ASENDING ORDER BELOW
         try:
             #db.session.add(add_reporter,add_phone,add_title,add_description,add_location,add_type)
             ##db.session.add(add_reporter)
@@ -148,8 +149,15 @@ def loginPage():
 def unhandledIssues():
     title = "JPC Bug Tracker | Unhandled"
 
+    ## NEED TO CHECK TO MAKE SURE THAT issueAssigned VARIABLE IS NOT TRUE
+
     # Run query to see all unhandled issues in DB
-    unhandledIssuesForm = Issues.query.order_by(Issues.issueDate)
+    ## DESENDING ORDER BELOW
+    #unhandledIssuesForm = Issues.query.order_by(Issues.issueDate.desc()).all()
+    unhandledIssuesForm = Issues.query.order_by(Issues.issueDate.desc()).filter_by(issueAssigned=False)
+
+    ## ASENDING ORDER BELOW
+    #unhandledIssuesForm = Issues.query.order_by(Issues.issueDate)
 
     return render_template('unhandled.html', title = title, Unhandled_issues = unhandledIssuesForm)
 

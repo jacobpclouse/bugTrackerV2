@@ -60,3 +60,5 @@ This is a helpdesk bug tracker built with flask, modeled off the old HTML versio
 - https://stackoverflow.com/questions/17147821/how-to-make-a-whole-row-in-a-table-clickable-as-a-link
 - jQuery and Clickable rows: https://befused.com/jquery/clickable-table-row/
 - jQuery with Flask: https://pythonprogramming.net/jquery-flask-tutorial/
+- Python Flask SQLAlchemy Pagination: https://stackoverflow.com/questions/43103585/python-flask-sqlalchemy-pagination
+- 

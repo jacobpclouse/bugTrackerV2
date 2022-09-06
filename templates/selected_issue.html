@@ -66,7 +66,7 @@
     <div class="container-right">
       <!-- Issue #(put id number) : (Title of the Issue) -->
 
-      <h1><i class="fas fa-wrench"></i> Issue : </h1>
+      <h1><i class="fas fa-wrench"></i>{% for issue in current_Issue %} Issue No: {{issue.id}} - {{issue.issueTitle}}{% endfor %}</h1>
 
       <div class="dashboard-selections">
         <!--  Below use the issue specific styles to adjust -->
@@ -74,11 +74,9 @@
           <!-- <h2>Title: </h2> -->
           <div>
             {% for issue in current_Issue %}
-            <p>Reported By:  {{issue.id}}</p>
-            <!-- <p>{% block current_Issue  %} {{ current_Issue }} {% endblock %}</p> -->
-            <!-- <p>{{ current_Issue.issueReporter }}</p> -->
-            <p>Date Reported: {{issue.issueDate}}</p>
-            <p>Description: {{issue.issueDescription}}</p>
+            <p> <b><u><em>Reported By:</em></u></b> {{issue.issueReporter}}</p>
+            <p> <b><u><em>Date Reported:</em></u></b> {{issue.issueDate}}</p>
+            <p> <b><u><em>Description:</em></u></b> {{issue.issueDescription}}</p>
             <input type="submit" value="Assign To Me" class="specialBtn">
             {% endfor %}
           </div>

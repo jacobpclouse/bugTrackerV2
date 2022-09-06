@@ -65,8 +65,8 @@
       <h1><i class="fas fa-folder-open"></i> All Open</h1>
 
 
-      <table class="table-all-open">
-        <thead>
+      
+        <!-- <thead>
           <tr>
             <th>Issue Title:</th>
             <th>Key #:</th>
@@ -74,13 +74,56 @@
             <th>Assigned To:</th>
           </tr>
         </thead>
-        <tbody id="open-issue-list"></tbody>
+        <tbody id="open-issue-list"> -->
+
+  
+        <div class="scroll-div">
+        <table class="table-all-open">
+          <input type="text" id="search-input" onkeyup="tableSearchFunction()" placeholder="Search for Request Type"
+          title="Type in an Issue Summary">
+          <th>Summary:</th>
+          <th>Key:</th>
+          <th>Customer Request Type:</th>
+          <th>Reporter:</th>
+          <th>Location:</th>
+  
+  
+          </tr>
+            {% for issue in all_Issues %}
+              <tr>
+                <td>
+                  {{ issue.issueTitle }}
+                </td> <!-- Title -->
+  
+  
+                <td>
+                  {{ issue.id }}
+                </td> <!-- Primary Key / ID -->
+  
+  
+                <td>
+                  {{ issue.issueType }}
+                </td> <!-- Overall Type -->
+  
+  
+                <td>
+                  {{ issue.issueReporter }}
+                </td> <!-- Reporter Name -->
+  
+  
+                <td>
+                  {{ issue.issueLocation }}
+                </td> <!-- Location -->
+              </tr>
+  
+            {% endfor %}
+            </tr>
+          
+
+
+        
       </table>
-
-
-
-
-
+    </div>
     </div>
   </div>
   </section>
