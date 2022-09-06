@@ -1,3 +1,4 @@
+// Function used to search tables for characters
 function tableSearchFunction() {
     var input, filter, table, tr, td, i, txtValue;
 
@@ -18,3 +19,5 @@ function tableSearchFunction() {
       }       
     }
   }
+
+
