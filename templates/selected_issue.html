@@ -21,8 +21,8 @@
   
 
   <!-- Title of the Page -->
-  <title>JPC Bug Tracker | Issue</title> 
-  <!-- ^^ have it so that the title of the issue comes through -->
+  <title>{% block title %} {{ title }}{% endblock %}</title>
+  <!-- <title>JPC Bug Tracker | Issue</title>  -->
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/images/favicon3.svg') }}">
 </head>
 
@@ -65,21 +65,24 @@
 
     <div class="container-right">
       <!-- Issue #(put id number) : (Title of the Issue) -->
-      <h1><i class="fas fa-wrench"></i> Issue</h1>
+
+      <h1><i class="fas fa-wrench"></i> Issue : </h1>
 
       <div class="dashboard-selections">
-
+        {% block current_Issue %}
         <!--  Below use the issue specific styles to adjust -->
         <div class="issue-left">
           <!-- <h2>Title: </h2> -->
           <div>
             <p>Reported By:  </p>
-            <p>Date Reported: </p>
-            <p>Description:  </p>
+            <p>{{ current_Issue.issueReporter }}</p>
+            <p>Date Reported:</p>
+            <p>Description: </p>
             <input type="submit" value="Assign To Me" class="specialBtn">
           </div>
         </div>
 
+        {% endblock %}
         <div class="issue-right">
           
           <h4>Comments: </h4>

@@ -20,7 +20,8 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/dashboard-selections.css') }}">
 
   <!-- Title of the Page -->
-  <title>JPC Bug Tracker | Sign In</title>
+  <title>{% block title %} {{ title }}{% endblock %}</title>
+  <!-- <title>JPC Bug Tracker | Sign In</title> -->
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/images/favicon3.svg') }}">
 </head>
 

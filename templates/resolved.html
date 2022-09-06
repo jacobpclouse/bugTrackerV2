@@ -17,7 +17,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
 
     <!-- Title of the Page -->
-    <title>JPC Bug Tracker | Resolved</title>
+    <title>{% block title %} {{ title }}{% endblock %}</title>
+    <!-- <title>JPC Bug Tracker | Resolved</title> -->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/images/favicon3.svg') }}">
 </head>
 <body>

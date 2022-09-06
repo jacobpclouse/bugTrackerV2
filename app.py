@@ -45,7 +45,7 @@ class Issues(db.Model):
 @app.route('/404')
 def pageNotFound():
     title = "JPC Bug Tracker | 404 Error"
-    return render_template('404.html')
+    return render_template('404.html', title = title)
 
 
 
@@ -54,7 +54,7 @@ def pageNotFound():
 @app.route('/all', methods=['POST', 'GET'])
 def allOpenIssues():
     title = "JPC Bug Tracker | All Open"
-    return render_template('all_open.html')
+    return render_template('all_open.html', title = title)
 
 
 
@@ -63,7 +63,7 @@ def allOpenIssues():
 @app.route('/assigned', methods=['POST', 'GET'])
 def assignedToMe():
     title = "JPC Bug Tracker | Assigned to Me"
-    return render_template('assigned_to_me.html')
+    return render_template('assigned_to_me.html', title = title)
 
 
 
@@ -73,7 +73,7 @@ def assignedToMe():
 @app.route('/dashboard', methods=['POST', 'GET'])
 def dashboard():
     title = "JPC Bug Tracker | Dashboard"
-    return render_template('dashboard.html')
+    return render_template('dashboard.html', title = title)
 
 
 
@@ -118,9 +118,9 @@ def reportAnIssue():
             return redirect('/unhandled')
 
         except: 
-            return redirect('/404') # if there is an issue, will return to 404 page
+            return redirect('/404', title = title) # if there is an issue, will return to 404 page
     else:
-        return render_template('report_an_issue.html')
+        return render_template('report_an_issue.html', title = title)
 
 
 
@@ -129,7 +129,7 @@ def reportAnIssue():
 @app.route('/resolved', methods=['POST', 'GET'])
 def resolvedIssues():
     title = "JPC Bug Tracker | Resolved"
-    return render_template('resolved.html')
+    return render_template('resolved.html', title = title)
 
 
 
@@ -138,7 +138,7 @@ def resolvedIssues():
 @app.route('/login', methods=['POST', 'GET'])
 def loginPage():
     title = "JPC Bug Tracker | Login"
-    return render_template('sign_in.html')
+    return render_template('sign_in.html', title = title)
 
 
 
@@ -151,7 +151,7 @@ def unhandledIssues():
     # Run query to see all unhandled issues in DB
     unhandledIssuesForm = Issues.query.order_by(Issues.issueDate)
 
-    return render_template('unhandled.html', Unhandled_issues = unhandledIssuesForm)
+    return render_template('unhandled.html', title = title, Unhandled_issues = unhandledIssuesForm)
 
 
 
@@ -160,11 +160,13 @@ def unhandledIssues():
 @app.route('/issue/<int:issue_id>', methods=['POST', 'GET'])
 def specificIssue(issue_id):
     title = "JPC Bug Tracker | Issue No: "
+    issueNumber = Issues.query.filter_by(id=issue_id)
+    return render_template('selected_issue.html', title = title, current_Issue = issueNumber )
 ## TRY having it so that you click a link that uses id in the url, then that id pulls the data from the db and displays it
-    try:
-        issueNumber = Issues.query.filter_by(id=issue_id)
-        return render_template('selected_issue.html', current_Issue = issueNumber )
-    except IndexError:
-        abort(404)
+    # try:
+    #     issueNumber = Issues.query.filter_by(id=issue_id)
+    #     return render_template('selected_issue.html', current_Issue = issueNumber )
+    # except IndexError:
+    #     abort(404)
     
         
