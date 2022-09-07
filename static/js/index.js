@@ -21,3 +21,21 @@ function tableSearchFunction() {
   }
 
 
+// Below is using js to generate the link for the issue and go there
+
+// function generateLinkForIssue() {
+//   var row;
+//   // selectedRow
+
+//   // console.log("it works")
+//   console.log(document.getElementById("row-id"));
+  
+// }
+
+
+// https://stackoverflow.com/questions/29042140/click-on-html-table-and-get-row-number-with-javascript-not-jquery
+function  generateLinkForIssue(element) {
+
+
+  console.log(element)
+}

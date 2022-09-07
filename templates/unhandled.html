@@ -80,15 +80,19 @@
         <th>Location:</th>
 
 
-        </tr>
+        <!-- <tr onclick="window.location=;" style='cursor: pointer;'>Hello</tr> -->
+
           {% for issue in Unhandled_issues %}
-            <tr>
+          <!-- <tr> 
+            
+          </tr> -->
+            <tr onClick="generateLinkForIssue(this)"> 
               <td>
                 {{ issue.issueTitle }}
               </td> <!-- Title -->
 
 
-              <td>
+              <td > 
                 {{ issue.id }}
               </td> <!-- Primary Key / ID -->
 
