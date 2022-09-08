@@ -74,3 +74,8 @@ This is a helpdesk bug tracker built with flask, modeled off the old HTML versio
 - https://stackoverflow.com/questions/10245279/wrapping-html-table-rows-in-a-tags
 - https://stackoverflow.com/questions/10245279/wrapping-html-table-rows-in-a-tags/61589399#61589399
 - Onclick W3: https://www.w3schools.com/jsref/event_onclick.asp
+- how to create a dynamic url from form using flask: https://stackoverflow.com/questions/59558074/how-to-create-a-dynamic-url-from-form-using-flask
+- https://stackoverflow.com/questions/29042140/click-on-html-table-and-get-row-number-with-javascript-not-jquery
+- getting child elements from parent elements in javascript: https://www.geeksforgeeks.org/how-to-get-the-child-element-of-a-parent-using-javascript/
+- jquery and flask url crafting: https://stackoverflow.com/questions/20355455/how-to-set-flask-url-for-in-jquery
+- 

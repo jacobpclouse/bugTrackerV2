@@ -33,9 +33,15 @@ function tableSearchFunction() {
 // }
 
 
-// https://stackoverflow.com/questions/29042140/click-on-html-table-and-get-row-number-with-javascript-not-jquery
 function  generateLinkForIssue(element) {
+  //console.log(element)
+  idForURL = parseInt(element.children["id-value"].innerText);
+  //idForURL = element.children["id-value"].innerText;
 
+  
+  // use this with jquery to get new url
+  // https://stackoverflow.com/questions/20355455/how-to-set-flask-url-for-in-jquery
 
-  console.log(element)
+  
+  return idForURL
 }
