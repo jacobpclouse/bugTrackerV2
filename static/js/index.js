@@ -22,26 +22,52 @@ function tableSearchFunction() {
 
 
 // Below is using js to generate the link for the issue and go there
+function generateLinkForIssueHref(element,uri) {
+  // new http request setup
+  var xmlHttp = new XMLHttpRequest();
 
-// function generateLinkForIssue() {
-//   var row;
-//   // selectedRow
+  // selectedRow
+  console.log(uri)
+  // getting id from inside element
+  idForURL = element.children["id-value"].innerText;
+  // creating uri
+  newURI = uri.concat(idForURL)
 
-//   // console.log("it works")
-//   console.log(document.getElementById("row-id"));
-  
-// }
+  console.log(idForURL);
+  console.log(`new uri: ${newURI}`)
 
+  // send request
+  xmlHttp.open( "GET", newURI, false ); // FALSE for sync request
+  xmlHttp.send ();
+  // xmlHttp.send( null );
 
-function  generateLinkForIssue(element) {
-  //console.log(element)
-  idForURL = parseInt(element.children["id-value"].innerText);
-  //idForURL = element.children["id-value"].innerText;
-
-  
-  // use this with jquery to get new url
-  // https://stackoverflow.com/questions/20355455/how-to-set-flask-url-for-in-jquery
-
-  
-  return idForURL
+  // return newURI
+  console.log("Request Sent")
 }
+
+
+// function  generateLinkForIssue(element) {
+
+  
+//   // Create an XMLHttpRequest object
+//   const xhttp = new XMLHttpRequest();
+  
+//   idForURL = parseInt(element.children[1].innerText);
+//   //idForURL = element.children["id-value"].innerText;
+//   console.log(idForURL)
+//   xhttp.open("POST", "/issue",idForURL);
+//   xhttp.send();
+  
+
+// -----
+
+// // Below is using js to generate the link for the issue and go there
+// function generateLinkForIssueHref(element,uri) {
+//   // selectedRow
+//   console.log(uri)
+//   idForURL = element.children["id-value"].innerText;
+//   console.log(idForURL);
+//   // "location.href=this.href+'?xyz='+val;return false;"
+//   newURI = uri.concat(idForURL)
+//   console.log(`new uri: ${newURI}`)
+// }

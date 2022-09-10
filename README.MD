@@ -78,4 +78,4 @@ This is a helpdesk bug tracker built with flask, modeled off the old HTML versio
 - https://stackoverflow.com/questions/29042140/click-on-html-table-and-get-row-number-with-javascript-not-jquery
 - getting child elements from parent elements in javascript: https://www.geeksforgeeks.org/how-to-get-the-child-element-of-a-parent-using-javascript/
 - jquery and flask url crafting: https://stackoverflow.com/questions/20355455/how-to-set-flask-url-for-in-jquery
-- 
+- How to insert a JavaScript variable inside href attribute: https://www.geeksforgeeks.org/how-to-insert-a-javascript-variable-inside-href-attribute/

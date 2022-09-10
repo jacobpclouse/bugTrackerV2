@@ -145,10 +145,18 @@ def loginPage():
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # any unhandled issues
+# failing because of no value in first route, optional value: https://realpython.com/python-optional-arguments/
 @app.route('/unhandled', methods=['POST', 'GET'])
-def unhandledIssues():
+# @app.route('/unhandled/<data>', methods=['POST', 'GET'])
+# def unhandledIssues(inputData=""):
+def unhandledIssues(input):
+    # print(f"Input data is: {inputData}")
     title = "JPC Bug Tracker | Unhandled"
 
+    if request.method == "POST":
+        print("POST Request made")
+    if request.method == "GET" :
+        return redirect(f'/issue/{input}')
     ## NEED TO CHECK TO MAKE SURE THAT issueAssigned VARIABLE IS NOT TRUE
 
     # Run query to see all unhandled issues in DB
@@ -163,6 +171,57 @@ def unhandledIssues():
 
 
 
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# # SELECTED SPECIFIC ISSUE /issue/<int:user_id> not working but close
+
+# @app.route('/issue/<issue_id>', methods=['POST', 'GET'])
+# def specificIssue(issue_id):
+#     # Make Title of page
+#     title = f"JPC Bug Tracker | Issue No: {issue_id}"
+
+#     issueNumber = Issues.query.filter_by(id=issue_id)
+#     # if request.method == "POST":
+#     #     idForURL = request.form["html_reporter"]
+#     #idForURL = request.form.get(idForURL)
+
+#     issueNumber = Issues.query.filter_by(id=issue_id)
+
+
+#     return render_template('selected_issue.html', title = title, current_Issue = issueNumber )
+
+
+
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# # SELECTED SPECIFIC ISSUE /issue/<int:user_id>
+# @app.route('/issue/', methods=['POST', 'GET'])
+@app.route('/issue/<int:issue_id>', methods=['POST', 'GET'])
+# def specificIssue(idForURL):
+def specificIssue(issue_id):
+    # if data isn't empty
+
+    if request.method == "POST":
+        print("POST REQUEST")
+    if request.method == "GET":
+        print("GET REQUEST")
+    if issue_id != "":
+        print("Issue_id has data")
+    if issue_id == "":
+        print("Issue_id does not have data")
+    
+    issueNumber = Issues.query.filter_by(id=issue_id)
+
+    
+    # idForURL = request.form.get(idForURL)
+    title = f"JPC Bug Tracker | Issue No: {issueNumber}"
+    # issueNumber = Issues.query.filter_by(id=idForURL)
+
+
+    return render_template('selected_issue.html', title = title, current_Issue = issueNumber )
+
+
+
+
+'''
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # # SELECTED SPECIFIC ISSUE /issue/<int:user_id>
 @app.route('/issue/<int:issue_id>', methods=['POST', 'GET'])
@@ -179,4 +238,4 @@ def specificIssue(issue_id):
     # except IndexError:
     #     abort(404)
     
-        
+        '''

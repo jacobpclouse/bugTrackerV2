@@ -28,16 +28,16 @@
 
 
 
-  <!-- <script>
+  <script>
     function  generateLinkForIssue2(element) {
       //console.log(element)
       idForURL = parseInt(element.children[1].innerText)
-      
-      return idForURL
+      console.log(idForURL)
+
       //window.location.replace("{{ url_for('specificIssue')}}")
       //window.location.replace("{{ url_for('specificIssue')}}")
     }
-  </script> -->
+  </script>
 </head>
 
 <body>
@@ -96,16 +96,16 @@
         <!-- <tr onclick="window.location=;" style='cursor: pointer;'>Hello</tr> -->
 
           {% for issue in Unhandled_issues %}
-
-          <!-- <tr action="/issue" onClick="elementFunction(this)" >  -->
-            <!-- <tr href="/issue" onClick="generateLinkForIssueHref(this,'/issue/')" >  -->
-            <tr onClick="generateLinkForIssueHref(this,'/issue/')" >  
-              <td>
+          <!-- <tr> 
+            
+          </tr> -->
+            <tr onClick="generateLinkForIssue(this)" >  
+              <td id="{% block number %} {{ number }}{% endblock %}">
                 {{ issue.issueTitle }}
               </td> <!-- Title -->
 
 
-              <td id="id-value" > 
+              <td id="id-value"> 
                 {{ issue.id }}
               </td> <!-- Primary Key / ID -->
 
