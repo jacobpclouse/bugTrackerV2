@@ -1,5 +1,6 @@
 from crypt import methods
 from email.policy import default
+from re import T
 import sqlite3
 from turtle import title
 from markupsafe import escape
@@ -19,18 +20,13 @@ db = SQLAlchemy(app)
 # Create Database model -- Will make fields required later
 class Issues(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    issueReporter = db.Column(db.String(200))
-    #issueReporter = db.Column(db.String(200), nullable=False)
+    issueReporter = db.Column(db.String(200), nullable=False)
     reporterPhone = db.Column(db.Float(10))
     issueDate = db.Column(db.DateTime, default=datetime.utcnow)
-    issueTitle = db.Column(db.String(200))
-    #issueTitle = db.Column(db.String(200), nullable=False)
-    issueDescription = db.Column(db.String(1000))
-    #issueDescription = db.Column(db.String(1000), nullable=False)
-    issueLocation = db.Column(db.String(200))
-    #issueLocation = db.Column(db.String(200), nullable=False)
-    issueType = db.Column(db.String(200))
-    #issueType = db.Column(db.String(200), nullable=False
+    issueTitle = db.Column(db.String(200), nullable=False)
+    issueDescription = db.Column(db.String(1000), nullable=False)
+    issueLocation = db.Column(db.String(200), nullable=False)
+    issueType = db.Column(db.String(200), nullable=False)
     issueAssigned = db.Column(db.Boolean, default=False)
     issueResolved = db.Column(db.Boolean, default=False)
 
@@ -156,7 +152,7 @@ def loginPage():
 def unhandledIssuesWithData(data):
     title = "JPC Bug Tracker | Redirecting..."
     print(f"has data: {data}")
-    return redirect(f"/issue/{data}")
+    return redirect(f"/issue/{data}", title = title)
 ## SPLIT INTO TWO: ONE WITH ARGS and ONE WITHOUT
 
 
@@ -183,7 +179,7 @@ def unhandledIssuesNoData():
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # # SELECTED SPECIFIC ISSUE /issue/<int:user_id> not working but close
 
-@app.route('/issue/<issue_id>', methods=['POST', 'GET'])
+@app.route('/issue/<int:issue_id>', methods=['POST', 'GET'])
 def specificIssue(issue_id):
 #     # Make Title of page
     title = f"JPC Bug Tracker | Issue No: {issue_id}"
