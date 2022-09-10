@@ -151,10 +151,12 @@ def loginPage():
 
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# redirecting issues in unhandled to issues route
 @app.route('/unhandled/<data>', methods=['POST', 'GET'])
 def unhandledIssuesWithData(data):
+    title = "JPC Bug Tracker | Redirecting..."
     print(f"has data: {data}")
-    return render_template('sign_in.html', title = title)
+    return redirect(f"/issue/{data}")
 ## SPLIT INTO TWO: ONE WITH ARGS and ONE WITHOUT
 
 
