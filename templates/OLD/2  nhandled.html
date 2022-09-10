@@ -25,6 +25,19 @@
   <title>{% block title %} {{ title }}{% endblock %}</title>
   <!-- <title>JPC Bug Tracker | Unhandled</title> -->
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/images/favicon3.svg') }}">
+
+
+
+  <!-- <script>
+    function  generateLinkForIssue2(element) {
+      //console.log(element)
+      idForURL = parseInt(element.children[1].innerText)
+      
+      return idForURL
+      //window.location.replace("{{ url_for('specificIssue')}}")
+      //window.location.replace("{{ url_for('specificIssue')}}")
+    }
+  </script> -->
 </head>
 
 <body>
@@ -83,16 +96,16 @@
         <!-- <tr onclick="window.location=;" style='cursor: pointer;'>Hello</tr> -->
 
           {% for issue in Unhandled_issues %}
-          <!-- <tr> 
-            
-          </tr> -->
-            <tr onClick="generateLinkForIssue(this,'/issue/')" >  
+
+          <!-- <tr action="/issue" onClick="elementFunction(this)" >  -->
+            <!-- <tr href="/issue" onClick="generateLinkForIssueHref(this,'/issue/')" >  -->
+            <tr onClick="generateLinkForIssueHref(this,'/issue/')" >  
               <td>
                 {{ issue.issueTitle }}
               </td> <!-- Title -->
 
 
-              <td id="id-value"> 
+              <td id="id-value" > 
                 {{ issue.id }}
               </td> <!-- Primary Key / ID -->
 
@@ -273,7 +286,7 @@
 
   <!-- Javascript -->
   <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  </body>
 
