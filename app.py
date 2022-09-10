@@ -151,7 +151,10 @@ def loginPage():
 
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-#@app.route('/unhandled/<data>', methods=['POST', 'GET'])
+@app.route('/unhandled/<data>', methods=['POST', 'GET'])
+def unhandledIssuesWithData(data):
+    print(f"has data: {data}")
+    return render_template('sign_in.html', title = title)
 ## SPLIT INTO TWO: ONE WITH ARGS and ONE WITHOUT
 
 
@@ -161,7 +164,7 @@ def loginPage():
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # any unhandled issues
 @app.route('/unhandled', methods=['POST', 'GET'])
-def unhandledIssues():
+def unhandledIssuesNoData():
     title = "JPC Bug Tracker | Unhandled"
 
 
